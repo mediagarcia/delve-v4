@@ -2,12 +2,11 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, Target, Users, Heart, TrendingUp, Award } from "lucide-react";
+import { ArrowRight, Target, Users, Heart, TrendingUp, Award, Play } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import teamImage from "@/assets/team-collaboration.jpg";
 import womanDoctor from "@/assets/woman-doctor-monochhrome.jpg";
-import whaleTankVideo from "@/assets/Delve-Health-Wessam-Whale-Tank.mp4";
 import minnesotaIcon from "@/assets/minnesota-icon.png";
 import knowledgeIcon from "@/assets/knowledge-icon.png";
 import keyIcon from "@/assets/key-icon.png";
@@ -72,12 +71,15 @@ const About = () => {
 
               {/* Video and Story Grid */}
               <div className="grid lg:grid-cols-2 gap-12 items-center">
-                {/* Video */}
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border bg-black">
-                  <video controls className="w-full aspect-video">
-                    <source src={whaleTankVideo} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
+                {/* Video Placeholder - Replace with YouTube/Vimeo embed when available */}
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border bg-gradient-to-br from-primary/20 to-accent/20 aspect-video flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Play className="text-primary ml-1" size={40} />
+                    </div>
+                    <p className="text-muted-foreground font-medium">Wessam Sonbol at Whale Tank</p>
+                    <p className="text-sm text-muted-foreground">Video coming soon</p>
+                  </div>
                 </div>
 
                 {/* Story Content */}
