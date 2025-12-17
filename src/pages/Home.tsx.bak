@@ -50,21 +50,29 @@ const Home = () => {
               </p>
             </div>
 
-            {/* Right Column - YouTube Video */}
+            {/* Right Column - Video Placeholder */}
             <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-primary/20">
-                <div className="aspect-video relative">
-                  <iframe
-                    src="https://www.youtube.com/embed/9J7FGmgm4_g?autoplay=1&mute=1&loop=1&playlist=9J7FGmgm4_g&controls=0&showinfo=0&rel=0&modestbranding=1"
-                    title="Delve Health Video"
-                    className="absolute inset-0 w-full h-full"
-                    allow="autoplay; encrypted-media"
-                    allowFullScreen
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-primary/20 group">
+                <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 relative">
+                  <img
+                    src={heroImage}
+                    alt="Clinical trial innovation"
+                    className="w-full h-full object-cover opacity-80"
                   />
-                  {/* Gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-primary/10 pointer-events-none" />
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-6 pointer-events-none">
-                    <p className="text-sm font-semibold text-foreground">Delve Health: Transforming Clinical Trials</p>
+                  <div className="absolute inset-0 flex items-center justify-center bg-background/30 backdrop-blur-sm group-hover:bg-background/40 transition-colors">
+                    <div className="w-20 h-20 rounded-full bg-primary/90 flex items-center justify-center shadow-lg hover:scale-110 transition-transform cursor-pointer">
+                      <svg
+                        className="w-8 h-8 text-primary-foreground ml-1"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-6">
+                    <p className="text-sm font-semibold text-foreground">Watch: How Delve Health Transforms Clinical Trials</p>
+                    <p className="text-xs text-muted-foreground mt-1">2:30 minutes</p>
                   </div>
                 </div>
               </div>
