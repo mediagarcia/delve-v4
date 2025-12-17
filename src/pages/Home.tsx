@@ -1,9 +1,74 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, MessageSquare, ClipboardList, Activity, Heart, Users, Target, TrendingUp, Globe, CheckCircle2, XCircle, Clock, Zap, BarChart3 } from "lucide-react";
+import { ArrowRight, MessageSquare, ClipboardList, Activity, Heart, Users, Target, TrendingUp, Globe, CheckCircle2, XCircle, Clock, Zap, BarChart3, ChevronLeft, ChevronRight, Shuffle } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+
+// 10 headline variations for Wessam to choose from
+const headlineVariations = [
+  {
+    line1: "Some See Noise.",
+    line2: "We Hear Heartbeats.",
+    text: "Unified wearable data, multilingual eCOA, and human concierge support — delivering validated endpoints and unmatched compliance.",
+    cta: "Hear the Difference"
+  },
+  {
+    line1: "Data Tells Stories.",
+    line2: "We Make Them Matter.",
+    text: "From raw sensor signals to regulator-ready endpoints — we turn continuous patient data into evidence that changes outcomes.",
+    cta: "See the Story"
+  },
+  {
+    line1: "Patients Drift Away.",
+    line2: "We Keep Them Close.",
+    text: "Human concierge support, proactive engagement, and real-time compliance monitoring — because every patient who stays changes the science.",
+    cta: "Keep Them Close"
+  },
+  {
+    line1: "Others Count Downloads.",
+    line2: "We Count on Humans.",
+    text: "Live multilingual concierge teams supporting patients through every step — because technology connects data, but empathy connects people.",
+    cta: "Meet the Team"
+  },
+  {
+    line1: "Trials Break Down.",
+    line2: "We Build Them Up.",
+    text: "When compliance drops and data gaps grow, Delve steps in with human-centered technology that keeps your study on track.",
+    cta: "Build With Us"
+  },
+  {
+    line1: "Devices Collect Dust.",
+    line2: "Ours Collect Evidence.",
+    text: "95% wearable compliance, real-time sync monitoring, and proactive patient outreach — turning passive devices into active data streams.",
+    cta: "Collect Better Data"
+  },
+  {
+    line1: "Compliance Is Hard.",
+    line2: "We Make It Human.",
+    text: "Not another dashboard. A concierge team that speaks 120+ languages, answers patient questions, and keeps your endpoints clean.",
+    cta: "Go Human"
+  },
+  {
+    line1: "Research Forgot to Listen.",
+    line2: "We Built the Translator.",
+    text: "Bridging the gap between patients and protocols with technology that adapts to people — not the other way around.",
+    cta: "Start Listening"
+  },
+  {
+    line1: "One Patient Changed Us.",
+    line2: "Now We Change Thousands.",
+    text: "Born from a personal story of clinical trial struggle, Delve exists so no patient gets that call one day too late.",
+    cta: "Hear Our Story"
+  },
+  {
+    line1: "Technology Connects Data.",
+    line2: "Empathy Connects People.",
+    text: "Wearables, ePRO, and analytics powered by real human support — because the best clinical research is built on trust.",
+    cta: "Connect With Us"
+  }
+];
 import heroImage from "@/assets/hero-clinical-trial.jpg";
 import teamImage from "@/assets/team-collaboration.jpg";
 import clinicalResearchTeam from "@/assets/clinical-research-team.png";
@@ -15,11 +80,55 @@ import delveAppHand from "@/assets/delve-app-elegant-hand-monochrome.jpeg";
 import womanDoctor from "@/assets/woman-doctor-monochhrome.jpg";
 
 const Home = () => {
+  const [currentVariation, setCurrentVariation] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const nextVariation = () => {
+    setIsAnimating(true);
+    setTimeout(() => {
+      setCurrentVariation((prev) => (prev + 1) % headlineVariations.length);
+      setIsAnimating(false);
+    }, 150);
+  };
+
+  const prevVariation = () => {
+    setIsAnimating(true);
+    setTimeout(() => {
+      setCurrentVariation((prev) => (prev - 1 + headlineVariations.length) % headlineVariations.length);
+      setIsAnimating(false);
+    }, 150);
+  };
+
+  const randomVariation = () => {
+    setIsAnimating(true);
+    setTimeout(() => {
+      let newIndex;
+      do {
+        newIndex = Math.floor(Math.random() * headlineVariations.length);
+      } while (newIndex === currentVariation);
+      setCurrentVariation(newIndex);
+      setIsAnimating(false);
+    }, 150);
+  };
+
+  // Keyboard shortcuts
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowRight') nextVariation();
+      if (e.key === 'ArrowLeft') prevVariation();
+      if (e.key === 'r' || e.key === 'R') randomVariation();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [currentVariation]);
+
+  const current = headlineVariations[currentVariation];
+
   return (
     <div className="min-h-screen">
       <Navigation />
 
-      {/* Hero Section - "Some See Noise. We Hear Heartbeats." */}
+      {/* Hero Section with Headline Cycler */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-background to-secondary/5 min-h-[85vh] flex items-center">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(71,184,190,0.1),transparent_50%)]" />
         <div className="container mx-auto px-4 py-20 relative z-10">
@@ -29,18 +138,24 @@ const Home = () => {
               <div className="inline-flex items-center justify-center lg:justify-start w-16 h-16 mb-6">
                 <Heart className="text-primary animate-pulse" size={48} strokeWidth={2} />
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-                Some See Noise.
-                <br />
-                <span className="text-primary">We Hear Heartbeats.</span>
-              </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                Unified wearable data, multilingual eCOA, and human concierge support — delivering validated endpoints and unmatched compliance.
+
+              {/* Animated Headlines */}
+              <div className={`transition-all duration-150 ${isAnimating ? 'opacity-0 transform -translate-y-2' : 'opacity-100 transform translate-y-0'}`}>
+                <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+                  {current.line1}
+                  <br />
+                  <span className="text-primary">{current.line2}</span>
+                </h1>
+              </div>
+
+              <p className={`text-xl md:text-2xl text-muted-foreground leading-relaxed transition-all duration-150 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}>
+                {current.text}
               </p>
+
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
                 <Button asChild variant="hero" size="xl">
                   <Link to="/demo">
-                    Hear the Difference <ArrowRight className="ml-2" size={20} />
+                    {current.cta} <ArrowRight className="ml-2" size={20} />
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="xl">
@@ -50,6 +165,41 @@ const Home = () => {
               <p className="text-sm text-muted-foreground pt-4">
                 Trusted by sponsors, sites & vendors transforming patient-centric research
               </p>
+
+              {/* Headline Cycler Controls */}
+              <div className="pt-6 border-t border-border/50">
+                <div className="flex items-center justify-center lg:justify-start gap-4">
+                  <div className="flex items-center gap-2 bg-muted/50 rounded-full p-1">
+                    <button
+                      onClick={prevVariation}
+                      className="p-2 rounded-full hover:bg-primary/20 transition-colors"
+                      title="Previous (←)"
+                    >
+                      <ChevronLeft size={20} />
+                    </button>
+                    <span className="px-3 font-mono text-sm font-medium">
+                      {currentVariation + 1} / {headlineVariations.length}
+                    </span>
+                    <button
+                      onClick={nextVariation}
+                      className="p-2 rounded-full hover:bg-primary/20 transition-colors"
+                      title="Next (→)"
+                    >
+                      <ChevronRight size={20} />
+                    </button>
+                  </div>
+                  <button
+                    onClick={randomVariation}
+                    className="p-2 rounded-full bg-muted/50 hover:bg-primary/20 transition-colors"
+                    title="Random (R)"
+                  >
+                    <Shuffle size={18} />
+                  </button>
+                </div>
+                <p className="text-xs text-muted-foreground mt-2 text-center lg:text-left">
+                  Use ← → arrows or press R for random • Pick your favorite!
+                </p>
+              </div>
             </div>
 
             {/* Right Column - YouTube Video */}
