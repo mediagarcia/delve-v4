@@ -2,27 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
-
-@font-face {
-  font-family: 'Mr Eaves XL Sans';
-  src: url('/fonts/MrEavesXLSanOT-Reg.woff2') format('woff2'),
-       url('/fonts/MrEavesXLSanOT-Reg.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Agenda';
-  src: url('/fonts/Agenda-Semibold.woff2') format('woff2'),
-       url('/fonts/Agenda-Semibold.woff') format('woff');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
 
 @layer base {
   :root {
@@ -110,24 +92,5 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
-
-  h1, h2, .font-headline {
-    font-family: 'Mr Eaves XL Sans', sans-serif;
-    font-weight: 400;
-  }
-
-  h3, h4, h5, h6, .font-subhead {
-    font-family: 'Mr Eaves XL Sans', sans-serif;
-    font-weight: 400;
-  }
-
-  body, p, .font-text-1 {
-    font-family: 'Agenda', sans-serif;
-    font-weight: 600;
-  }
-
-  .font-text-2, small, .text-sm, .text-xs {
-    font-family: 'Mr Eaves XL Sans', sans-serif;
-    font-weight: 400;
-  }
 }
+

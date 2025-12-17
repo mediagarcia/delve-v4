@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss";
+﻿import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
@@ -13,6 +13,11 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        headline: ['"Mr Eaves XL Sans"', 'sans-serif'],
+        body: ['Agenda', 'sans-serif'],
+        sans: ['Agenda', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
