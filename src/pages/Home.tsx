@@ -11,6 +11,8 @@ import wearableDevices from "@/assets/wearable-devices.jpg";
 import conciergePatientCare from "@/assets/concierge-patient-care.jpg";
 import dataVisualization from "@/assets/data-visualization.jpg";
 import patientsDigitalHealth from "@/assets/patients-digital-health.jpg";
+import delveAppHand from "@/assets/delve-app-elegant-hand-monochrome.jpeg";
+import womanDoctor from "@/assets/woman-doctor-monochhrome.jpg";
 
 const Home = () => {
   return (

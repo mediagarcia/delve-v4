@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, FileCheck, Video, Shield, Users, CheckCircle2, Clock, Globe, Eye, AlertCircle, Lock, Cloud } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import abstractBg from "@/assets/abstract background.png";
 
 const EConsent = () => {
   const pillars = [

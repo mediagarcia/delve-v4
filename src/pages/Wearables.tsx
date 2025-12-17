@@ -4,6 +4,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, CheckCircle, Watch, Zap, Shield, Activity, BarChart3, Users, Heart, Gauge } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import wearableAbstract from "@/assets/wearable-abstract.jpg";
+import handWearableIcon from "@/assets/hand-wearable icon.png";
 
 const Wearables = () => {
   return (
@@ -12,8 +14,11 @@ const Wearables = () => {
 
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-primary/5 via-background to-accent/5 py-16">
-          <div className="container mx-auto px-4">
+        <section className="relative bg-gradient-to-br from-primary/5 via-background to-accent/5 py-16 overflow-hidden">
+          <div className="absolute inset-0 opacity-10">
+            <img src={wearableAbstract} alt="" className="w-full h-full object-cover" />
+          </div>
+          <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-4xl mx-auto text-center space-y-6">
               <h1 className="text-4xl md:text-6xl font-bold">
                 Digital Measures Powered by Wearables

@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Activity, Heart, Wind, Footprints, Moon, CheckCircle2, FlaskConical, Settings, FileCheck } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import stethoscopeIcon from "@/assets/stethoscope-icon.png";
 
 const Biomarkers = () => {
   const validationPhases = [

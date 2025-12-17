@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, BarChart3, Building2, User, Smartphone, Activity, CheckCircle2, TrendingUp, AlertTriangle, Gauge } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import gridBackground from "@/assets/grid-background-dark blue.jpg";
 
 const Analytics = () => {
   const pillars = [

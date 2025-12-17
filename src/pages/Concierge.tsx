@@ -4,6 +4,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, CheckCircle, Heart, Calendar, Headphones, Smartphone, ClipboardCheck, Bell, Video, Pill } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import conciergeIcon from "@/assets/conceirge-icon.png";
+import peopleIcon from "@/assets/people-icon.png";
 
 const Concierge = () => {
   return (

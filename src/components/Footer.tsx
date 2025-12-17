@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import { Separator } from "@/components/ui/separator";
 import logoMain from "@/assets/DH_DkBlue.png";
+import linkedinIcon from "@/assets/linkedin-icon.png";
+import twitterIcon from "@/assets/twitter-icon.png";
+import fbIcon from "@/assets/fb-icon.png";
 
 const Footer = () => {
   return (
@@ -8,13 +11,24 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           <div>
-            <img src={logoMain} alt="Delve Health" className="h-8 w-auto mb-4" />
+            <img src={logoMain} alt="Delve Health" className="h-20 w-auto mb-4" />
             <p className="text-sm text-muted-foreground mb-2 font-semibold">
               Automation with Empathy.
             </p>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground mb-4">
               Transforming clinical research through human-centered technology.
             </p>
+            <div className="flex gap-3">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="opacity-60 hover:opacity-100 transition-opacity">
+                <img src={linkedinIcon} alt="LinkedIn" className="h-5 w-5" />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="opacity-60 hover:opacity-100 transition-opacity">
+                <img src={twitterIcon} alt="Twitter" className="h-5 w-5" />
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="opacity-60 hover:opacity-100 transition-opacity">
+                <img src={fbIcon} alt="Facebook" className="h-5 w-5" />
+              </a>
+            </div>
           </div>
 
           <div>
