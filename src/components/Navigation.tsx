@@ -25,7 +25,7 @@ import {
   Building
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import logoMain from "@/assets/delve-logo-main.png";
+import logoMain from "@/assets/DH_DkBlue.png";
 
 const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -239,15 +239,6 @@ const Navigation = () => {
                               </div>
                             </Link>
                           ))}
-                        </div>
-                        <div className="mt-6 pt-6 border-t border-border">
-                          <Link
-                            to="/solutions"
-                            className="text-sm font-semibold text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1"
-                            onClick={() => setActiveDropdown(null)}
-                          >
-                            View All Solutions →
-                          </Link>
                         </div>
                       </>
                     )}

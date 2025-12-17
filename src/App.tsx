@@ -18,6 +18,10 @@ import MedTech from "./pages/MedTech";
 import Sites from "./pages/Sites";
 import Contact from "./pages/Contact";
 import Careers from "./pages/Careers";
+import EConsent from "./pages/EConsent";
+import Analytics from "./pages/Analytics";
+import Provisioning from "./pages/Provisioning";
+import Biomarkers from "./pages/Biomarkers";
 
 const queryClient = new QueryClient();
 
@@ -37,10 +41,10 @@ const App = () => (
           <Route path="/solutions/wearables" element={<Wearables />} />
           <Route path="/solutions/patient-engagement" element={<SolutionECOA />} />
           <Route path="/solutions/concierge" element={<Concierge />} />
-          <Route path="/solutions/econsent" element={<SolutionECOA />} />
-          <Route path="/solutions/analytics" element={<SolutionECOA />} />
-          <Route path="/solutions/provisioning" element={<SolutionECOA />} />
-          <Route path="/solutions/biomarkers" element={<SolutionECOA />} />
+          <Route path="/solutions/econsent" element={<EConsent />} />
+          <Route path="/solutions/analytics" element={<Analytics />} />
+          <Route path="/solutions/provisioning" element={<Provisioning />} />
+          <Route path="/solutions/biomarkers" element={<Biomarkers />} />
 
           {/* Industries */}
           <Route path="/industries/pharma" element={<Pharma />} />

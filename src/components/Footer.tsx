@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Separator } from "@/components/ui/separator";
-import logoMain from "@/assets/delve-logo-main.png";
+import logoMain from "@/assets/DH_DkBlue.png";
 
 const Footer = () => {
   return (
