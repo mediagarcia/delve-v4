@@ -16,6 +16,7 @@ import Wearables from "./pages/Wearables";
 import Concierge from "./pages/Concierge";
 import MedTech from "./pages/MedTech";
 import Sites from "./pages/Sites";
+import Contact from "./pages/Contact";
 
 const queryClient = new QueryClient();
 
@@ -52,6 +53,7 @@ const App = () => (
 
           {/* Company */}
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
