@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, FileText, Download } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import clinicalResearchTeam from "@/assets/clinical-research-team.jpg";
+import clinicalResearchTeam from "@/assets/clinical-research-team.png";
 
 const WhitePapers = () => {
   const whitePapers = [

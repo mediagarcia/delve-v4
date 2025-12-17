@@ -6,7 +6,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import heroImage from "@/assets/hero-clinical-trial.jpg";
 import teamImage from "@/assets/team-collaboration.jpg";
-import clinicalResearchTeam from "@/assets/clinical-research-team.jpg";
+import clinicalResearchTeam from "@/assets/clinical-research-team.png";
 import wearableDevices from "@/assets/wearable-devices.jpg";
 import conciergePatientCare from "@/assets/concierge-patient-care.jpg";
 import dataVisualization from "@/assets/data-visualization.jpg";
